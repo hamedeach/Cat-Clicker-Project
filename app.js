@@ -85,7 +85,7 @@ function display_Active_cat(temp_cat){
     new_cat_name.setAttribute("id",'cat_'+temp_cat['id']+'_Name');
     new_cat_name.innerText = temp_cat['name'];
     new_cat_Counter.setAttribute("id", 'cat_'+temp_cat['id']+'_Counter');
-    new_cat_Counter.innerText = temp_cat['counter'];
+    new_cat_Counter.innerText = temp_cat['counter']; 
 
     new_Cat_div.appendChild(new_cat_img);
     new_Cat_div.appendChild(new_cat_name);
