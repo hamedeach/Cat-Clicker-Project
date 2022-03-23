@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+      </head>
 <body>
 
 <h1>Cat clicker game</h1>
@@ -7,9 +10,30 @@
     <ul id="navbar__list"></ul>
 </div>
 <div id="viewer">
-    <div id="active_cat">
+    <div id="active_cat"></div>
+</div>
 
-    </div>
+<div>
+    <input type="button" value="Admin" id="btnAdmin" onclick="View.showAdminPanel()">
+</div>
+
+<div id="admindiv" >
+    <form>
+        
+
+        <label for="admin_catname">Cat name </label>
+        <input type="text" name="admin_catname" id="admin_catname" required>
+
+        <label for="admin_catimg">Cat image </label>
+        <input type="text" name="admin_catimg" id="admin_catimg" required>
+
+        <label for="admin_catcounter">click counter </label>
+        <input type="text" name="admin_catcounter" id="admin_catcounter" required>
+
+        <input type="button" value="Save" id="btnSave" onclick="Controller.updateCat()">
+        <input type="button" value="Cancel" id="btnCancel" onclick="View.showAdminPanel()" >
+
+      </form>
 </div>
 
 
