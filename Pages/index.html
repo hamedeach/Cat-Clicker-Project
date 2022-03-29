@@ -14,6 +14,11 @@
 
     </ul>
 </div>
+<div id="catviewer"  >
+    <h1 id="cat-name" data-bind="text:currentCat().name"></h1>
+    <img id="cat-img" src="" alt="cute cat" data-bind="click: incrementClick, attr:{src:currentCat().imgpath}" >
+    <h2 id="cat-count" data-bind="text :currentCat().clickcount"></h2>
+</div>
 
 
 

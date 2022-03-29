@@ -1,5 +1,5 @@
-var CAT = function (id,name,path) {
-    this.id=id;
+var CAT = function (id, name, path) {
+    this.id = id;
     this.name = name;
     this.imgpath = path;
     this.clickcount = 0;
@@ -16,22 +16,32 @@ var ViewModel = function () {
     };
 
     init();
-    self.currentCat = ko.observable(this.cat_Array[0]);
 
-    self.setcurrentcat = function(catid){
+   
+
+   
+
+    self.setcurrentcat = function (catid) {
         console.log(catid);
-        let clickedcat = ko.utils.arrayFirst(self.cat_Array(), function(item) {
+        let clickedcat = ko.utils.arrayFirst(self.cat_Array(), function (item) {
             return item.id == catid;
         }) || null;
 
+        this.currentCat = ko.observable(clickedcat).extend({notify: "always"});
         
-       self.currentCat =ko.observable(clickedcat);
-       console.log(self.currentCat());
-
+        console.log("current cat is :" + self.currentCat().name);
 
     };
 
-   
+    this.setcurrentcat(1);
+
+    self.incrementClick = function () {
+        
+        self.currentCat().clickcount++;
+        console.log("counter : "+self.currentCat().clickcount)
+    }
+
+
 
 
 };
