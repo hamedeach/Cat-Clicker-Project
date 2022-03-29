@@ -1,45 +1,24 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="../Style/style.css">
       </head>
 <body>
 
 <h1>Cat clicker game</h1>
 <div name="navbar">
-    <ul id="navbar__list"></ul>
-</div>
-<div id="viewer">
-    <div id="active_cat"></div>
-</div>
+    <ul id="navbar__list" data-bind="foreach : cat_Array">
+        <li data-bind="attr:{id: id}">
+            <a href="#" data-bind="text : name, click:  function(catid) {  $parent.setcurrentcat(id, catid) }"></a>
+        </li>
 
-<div>
-    <input type="button" value="Admin" id="btnAdmin" onclick="View.showAdminPanel()">
+    </ul>
 </div>
 
-<div id="admindiv" >
-    <form>
-        
-
-        <label for="admin_catname">Cat name </label>
-        <input type="text" name="admin_catname" id="admin_catname" required>
-
-        <label for="admin_catimg">Cat image </label>
-        <input type="text" name="admin_catimg" id="admin_catimg" required>
-
-        <label for="admin_catcounter">click counter </label>
-        <input type="text" name="admin_catcounter" id="admin_catcounter" required>
-
-        <input type="button" value="Save" id="btnSave" onclick="Controller.updateCat()">
-        <input type="button" value="Cancel" id="btnCancel" onclick="View.showAdminPanel()" >
-
-      </form>
-</div>
 
 
 
 </body>
-<!--<script src="script.js" type="text/javascript"></script>-->
-<!--<script src="scriptclosure.js" type="text/javascript"></script>-->
-<script src="mvc.js" type="text/javascript"></script>
+<script type='text/javascript' src='../Scripts/knockout-3.5.1.js'></script>
+<script src="../Scripts/myKO.js" type="text/javascript"></script>
 </html>
